@@ -1,29 +1,20 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppNavigator from './src/navigation/AppNavigator';
+import { useFocusOneStore } from './src/store';
 
 export default function App() {
+  // 初始化store
+  useFocusOneStore.getState();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Focus One</Text>
-      <Text style={styles.subtitle}>专注的力量</Text>
-      <StatusBar barStyle="dark-content" />
-    </View>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <AppNavigator />
+        <StatusBar style="auto" />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 18,
-    color: '#666',
-  },
-});
