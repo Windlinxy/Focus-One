@@ -5,10 +5,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigator from './src/navigation/AppNavigator';
 import { useFocusOneStore } from './src/store';
 
-export default function App() {
-  // 初始化store
-  useFocusOneStore.getState();
+// 初始化store
+useFocusOneStore.getState();
 
+export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
