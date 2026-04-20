@@ -16,14 +16,5 @@
 
 set -e
 
-export GRADLE_USER_HOME="$(pwd)/.gradle"
-
-if [ -n "$GRADLE_ARGS" ]; then
-    set -- "$@" $GRADLE_ARGS
-fi
-
-if [ "$1" = "--no-daemon" ] || [ "$1" = "--stop" ]; then
-    GRADLE_OPTS="$GRADLE_OPTS -Dorg.gradle.daemon=false"
-fi
-
-exec "$(dirname "$0")/gradlew" "$@"
+# Use system Gradle instead of wrapper
+gradle "$@"
