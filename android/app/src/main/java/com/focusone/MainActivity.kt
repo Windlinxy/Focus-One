@@ -4,7 +4,7 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 
 class MainActivity : ReactActivity() {
-  override fun getMainComponentName(): String = "FocusOne"
+  override fun getMainComponentName(): String = "App"
 
   override fun createReactActivityDelegate(): ReactActivityDelegate {
     return ReactActivityDelegate(this, mainComponentName)
